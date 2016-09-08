@@ -2,7 +2,7 @@
 include 'conecta_mysql.inc';
 $reso = mysqli_query($conexao,"select * from DAODS");
 	echo "
-		<table class='table table-striped'>
+		<table class='table table-condensed table-striped'>
 		<thead>
 		<tr >
 		<th>Nomes</th>
@@ -16,7 +16,7 @@ $reso = mysqli_query($conexao,"select * from DAODS");
 			echo '<tr><td>' . $row['ds_nome'] . '</td><td>' . $row['ds_matricula'] . '</td><td>' . $row['cd_login'] . '</td><td>' . $sql['ds_isadm']. '</td>
 				  <td>
 				  <form method="post">
-				  <button type="submit" class="btn btn-danger" name="deleta" value='.$row['cd_login'].'>
+				  <button type="submit" class="btn btn-danger btn-sm" name="deleta" value='.$row['cd_login'].'>
 				  Excluir
 				  </button>
 				  </form>
@@ -39,7 +39,7 @@ $reso = mysqli_query($conexao,"select * from DAODS");
                          alert(response);
 				   setInterval(function(){
 			$("#Pesquisa").load("tabela.php");
-		}, 1000);
+		}, 3000);
             }            
 			});
 			 return false;

@@ -57,11 +57,20 @@
 				</nav>
 				<br>
 				";				
-				if($row['ds_isadm']=="Administrador"){
-				
+				switch($row['ds_isadm']){
+			
+				case "Administrador":
 				include "formAdmin.php";
-				}else{
-				include "formUser.php";
+				break;
+				
+				case "Apenas leitura":
+				include "formRead.php";
+				break;
+				
+				case "Leitura/Escrita":
+				include "formWriteRead.php";
+				break;
+			
 				}
 			}
 		}else{
