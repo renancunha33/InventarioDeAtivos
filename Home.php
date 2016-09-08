@@ -43,10 +43,19 @@
 				echo "
 					<nav class='navbar navbar-inverse navbar-fixed-top'>
 					<div class='container-fluid'>
+					 <a class='navbar-brand' href='#'>
+                    <img style='max-width:100px; width:70px'src='src/logo_brado.png' alt=''>
+					</a>
 					<div class='navbar-header'>
-						<a class='navbar-brand' href='#'>BEM VINDO, " . $DAODS['ds_nome']." !</a>
+					<a class='navbar-brand' href='#'>
+					 Bem vindo, " . $DAODS['ds_nome']." !</a>
 					</div>
-						<ul class='nav navbar-nav navbar-right'>
+					<ul class='nav navbar-nav navbar-right'>
+							<li>
+							<a>
+							Perfil: <b>".$row['ds_isadm']."</b>
+							</a>
+							</li>
 							<li>
 							<a href='login.html'>
 							Sair
