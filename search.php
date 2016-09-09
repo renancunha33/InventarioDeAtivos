@@ -2,7 +2,7 @@
  <?php
 	include 'conecta_mysql.inc';
 	$user = $_POST['nome'];
-	$reso = mysqli_query($conexao, "select LOGIN.*, DAODS.* from LOGIN inner join DAODS on '$user' = DAODS.cd_login");
+	$reso = mysqli_query($conexao, "select DAODS.*,LOGIN.* from DAODS inner join LOGIN on DAODS.cd_login = LOGIN.cd_login WHERE LOGIN.cd_login = '$user'");
 	$row = mysqli_fetch_array($reso); 
 	$matricula = $row['ds_matricula'];
 	$nome = $row['ds_nome'];
