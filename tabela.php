@@ -53,7 +53,7 @@ $reso = mysqli_query($conexao,"select * from DAODS");
 function printContent(el){
 	var restorepage = document.body.innerHTML;
 	var printcontent = document.getElementById(el).innerHTML;
-	document.body.innerHTML = printcontent;
+	document.body.innerHTML =  "<h1>Relatório de usúários<h1>"+printcontent;
 	window.print();
 	document.body.innerHTML = restorepage;
 }
