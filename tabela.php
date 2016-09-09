@@ -1,3 +1,5 @@
+  <button class="btn btn-info btn-sm" style="float: right;" onclick="printContent('tabela')">Relatório (BETA)</button>
+ <div id="tabela">
  <?php
 include 'conecta_mysql.inc';
 $reso = mysqli_query($conexao,"select * from DAODS");
@@ -25,6 +27,7 @@ $reso = mysqli_query($conexao,"select * from DAODS");
 	}
 	echo "</table>";
  ?>
+ </div>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript">
 	$("button[name=deleta]").click(function(){
@@ -45,4 +48,13 @@ $reso = mysqli_query($conexao,"select * from DAODS");
 			 return false;
 	
 });
+</script>
+<script type="text/javascript">
+function printContent(el){
+	var restorepage = document.body.innerHTML;
+	var printcontent = document.getElementById(el).innerHTML;
+	document.body.innerHTML = printcontent;
+	window.print();
+	document.body.innerHTML = restorepage;
+}
 </script>
