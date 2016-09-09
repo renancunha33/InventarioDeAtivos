@@ -1,0 +1,78 @@
+<html>
+<head>
+ <meta charset="utf-8">
+	<link href="./bootstrap/bootstrap.min.css" rel="stylesheet">
+	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	<link href="./bootstrap/ie10-viewport-bug-workaround.css" rel="stylesheet">
+	<!-- Custom styles for this template -->
+	<link href="./bootstrap/signin.css" rel="stylesheet">
+	<script src="./bootstrap/ie-emulation-modes-warning.js"></script>
+	<title>Cadastro</title>
+</head>
+<body>
+	<center>
+		<form class="form-signin" method= "POST" id="formulario">
+			<input type="text" class="form-control"name="nome" placeholder="Usuario"value=""required="">
+			<br>
+			<input type="password" class="form-control"name="senha" placeholder="Senha"value=""required="">
+			<input type="text" class="form-control"name="nomereal" placeholder="Nome real"value=""required="">
+			<br>
+			<input type="text" class="form-control"name="matricula" id="matriculaCadastro" placeholder="Matricula"value=""required="">
+			<br>
+			Tipo de usuário
+			<br>			
+            <select class="form-control"name="isadm">
+            <option>Administrador
+			</option>
+			<option>Apenas leitura
+			</option>
+			<option>Leitura/Escrita
+			</option> 
+            </select>				
+			<br>
+			<input type="button" name="enviar" value="Enviar" class="btn btn-lg btn btn-success btn-block">
+		</form>
+	</center>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://digitalbush.com/wp-content/uploads/2014/10/jquery.maskedinput.js"></script>
+<script type="text/javascript" src="https://github.com/igorescobar/jQuery-Mask-Plugin/src/jquery.mask.min.js"></script>
+<script type="text/javascript">
+function ajax(nome,senha,nomereal,matricula,isadm){
+	info = {"nome" : nome, "senha" : senha, "nomereal" : nomereal, "matricula" : matricula, "isadm" : isadm};
+	$.ajax({
+	type:"post",
+	url:"control/insert.php",
+	data: info,
+	success: function (response) {
+            if(response.status == "successo") {
+                alert(response);
+            } else{
+                   alert(response);
+				   setInterval(function(){
+			$("#Pesquisa").load("tabela.php");
+		}, 1000);
+            }
+            }
+			});
+}
+$(document).ready(function(){
+	$("input[name=enviar]").click(function(){
+	var nome = $("input[name=nome]").val();
+	var senha = $("input[name=senha]").val();
+	var nomereal = $("input[name=nomereal]").val();
+	var matricula = $("input[name=matricula]").val();
+	var isadm = $("select[name=isadm]").val();
+	ajax(nome,senha,nomereal,matricula,isadm);
+});
+
+});
+</script>
+<script>
+	jQuery(function($){
+		 $("#matricula").mask("999999");
+		  $("#matriculaCadastro").mask("999999");
+	});
+</script>
+</html>
