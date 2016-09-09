@@ -1,0 +1,214 @@
+<html>
+<head>
+<meta charset="utf-8">
+<link href="./bootstrap/bootstrap.min.css" rel="stylesheet">
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<link href="./bootstrap/ie10-viewport-bug-workaround.css" rel="stylesheet">
+<!-- Custom styles for this template -->
+<link href="./bootstrap/signin.css" rel="stylesheet">
+</head>
+<body>
+<form action="POST" id="formAtivo">
+<div class="form-group row">
+<div class="col-xs-8">
+ <input type="text" id="txtpatrimonio" name="txtpatrimonio" class="form-control" placeholder="Código de patrimônio" required>
+</div>
+</div>
+<div class="form-group row">
+   <div class="col-xs-8">
+      <input class="form-control" type="text"placeholder="Identificação" name="txtidentificacao"id="txtidentificacao" required>
+  </div>
+</div>
+<div class="form-group row">
+  <div class="col-xs-2">
+    Data do cadastro
+  </div>
+  <div class="col-xs-6">
+    <input class="form-control" type="date" id="dtcadastro"name="dtcadastro" required>
+  </div>
+</div>
+<div class="form-group row">
+ <div class="col-xs-2">
+	Data de aquisição
+  </div>
+  <div class="col-xs-6">
+    <input class="form-control" type="date"id="dtaquisicao" name="dtaquisicao" required>
+  </div>
+</div>
+<div class="form-group row">
+  
+  <div class="col-xs-8">
+    <input class="form-control" type="text"  placeholder="Código de nota fiscal" id="txtnf" name="txtnf">
+  </div>
+</div>
+<div class="form-group row">
+  
+  <div class="col-xs-8">
+    <input class="form-control" type="text"  placeholder="Valor(R$)" id="txtvalor" name="txtvalor">
+  </div>
+</div>
+<div class="form-group row">
+  <div class="col-xs-2">
+  Estado de conservação
+  </div>
+  <div class="col-xs-6">
+	<select class="form-control" placeholder="Estado de conservação" id="txtstatus"name="txtstatus" required>
+  <option value="" selected disabled>Escolha uma opção</option>
+  <option>Novo</option>
+  <option>Seminovo</option>
+  <option>Usado</option>
+</select>
+  </div>
+</div>
+<div class="form-group row">
+   <div class="col-xs-2">
+  Categoria
+  </div>
+  <div class="col-xs-6">
+	<select class="form-control" placeholder="Categoria" id="txtcategoria" name="txtcategoria" required>
+	<option value="" selected disabled>Escolha uma opção</option>
+  <option>Notebook</option>
+  <option>Desktop</option>
+  <option>Swicth/AP/Roteador</option>
+  <option>Sevidor</option>
+  <option>Monitor</option>
+  <option>Rádio</option>
+  <option>Coletor</option>
+  <option>Outros</option>
+</select>
+  </div>
+  </div>
+<div class="form-group row">
+  
+  <div class="col-xs-8">
+    <input class="form-control" type="text"  placeholder="Marca" id="txtmarca" name="txtmarca"required>
+  </div>
+</div>
+<div class="form-group row">
+   <div class="col-xs-2">
+  Unidade
+  </div>
+  <div class="col-xs-6">
+	<select class="form-control" id="txtunidade" name="txtunidade"required>
+	<option value="" selected disabled>Escolha uma opção</option>
+  <option>Esteio (RS)</option>
+  <option>Itajaí (SC)</option>
+  <option>Cambé (PR)</option>
+  <option>Colombo (PR)</option>
+  <option>Cubatão (SP)</option>
+  <option>Bauru (SP)</option>
+  <option>Curitiba (PR)</option>
+</select>
+</div>
+</div>
+<div class="form-group row">
+ <div class="col-xs-2">
+  Setor
+  </div>
+  <div class="col-xs-6">
+	<select class="form-control"id="txtsetor"name="txtsetor"required>
+	<option value="" selected disabled>Escolha uma opção</option>
+  <option>TI</option>
+  <option>PCM</option>
+  <option>SESMT</option>
+  <option>QA</option>
+  <option>TERMINAL</option>
+  <option>GERENCIA</option>
+  <option>OPERAÇÃO</option>
+  <option>RECEPÇÃO</option>
+  <option>RH/DP</option>
+  <option>MANUTENÇÃO</option>
+  <option>TERMINAL SECO</option>
+  <option>BALANÇA</option>
+  <option>ESTOQUE</option>
+  <option>FINANCEIRO</option>
+  </select>
+</div>
+
+</div>
+<div class="form-group row">
+  
+   <div class="col-xs-2">
+  Setor Anterior
+  </div>
+  <div class="col-xs-6">
+	<select class="form-control"id="txtsetoranterior"name="txtsetoranterior">
+	<option value="" selected disabled>Escolha uma opção</option>
+  <option>TI</option>
+  <option>PCM</option>
+  <option>SESMT</option>
+  <option>QA</option>
+  <option>TERMINAL</option>
+  <option>GERENCIA</option>
+  <option>OPERAÇÃO</option>
+  <option>RECEPÇÃO</option>
+  <option>RH/DP</option>
+  <option>MANUTENÇÃO</option>
+  <option>TERMINAL SECO</option>
+  <option>BALANÇA</option>
+  <option>ESTOQUE</option>
+  <option>FINANCEIRO</option>
+  </select>
+</div>
+</div>
+<div class="form-group row">
+   <div class="col-xs-8">
+    <textarea class="form-control" rows="2"  placeholder="Observações" id="txtobs"name="txtobs"></textarea>
+  </div>
+</div>
+<div class="form-group row">
+<div class="col-xs-5">
+ <input type="button" name="SalvarAtivo" value="SALVAR" class="btn btn-success btn-block">
+</div>
+</div>
+</div>
+</form>
+<br><br>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://digitalbush.com/wp-content/uploads/2014/10/jquery.maskedinput.js"></script>
+<script type="text/javascript" src="https://github.com/igorescobar/jQuery-Mask-Plugin/src/jquery.mask.min.js"></script>
+<script type="text/javascript">
+function ajax(txtpatrimonio,txtidentificacao,dtcadastro,dtaquisicao,txtnf,txtvalor,txtstatus,txtcategoria,txtmarca,txtunidade,txtsetor,txtsetoranterior,txtobs){
+	info = {"txtpatrimonio":txtpatrimonio,"txtidentificacao":txtidentificacao,"dtcadastro":dtcadastro,"dtaquisicao":dtaquisicao,"txtnf":txtnf,"txtvalor":txtvalor,"txtstatus":txtstatus,"txtcategoria":txtcategoria,"txtmarca":txtmarca,"txtunidade":txtunidade,"txtsetor":txtsetor,"txtsetoranterior":txtsetoranterior,"txtobs":txtobs};
+	//alert(info);
+	$.ajax({
+	type:"post",
+	url:"control/insertAtivo.php",
+	data: info,
+	success: function (response) {
+            if(response.status == "sucesso") {
+                alert(response);
+				
+            } else{
+                   alert(response);
+		         } 
+				 document.getElementById("formAtivo").reset();
+		 }
+			});
+}
+$(document).ready(function(){
+	$("input[name=SalvarAtivo]").click(function(){
+	var txtpatrimonio = $("input[name=txtpatrimonio]").val();
+	var txtidentificacao = $("input[name=txtidentificacao]").val();
+	var dtcadastro = $("input[name=dtcadastro]").val();
+	var dtaquisicao = $("input[name=dtaquisicao]").val();
+	var txtnf = $("input[name=txtnf]").val();
+	var txtvalor = $("input[name=txtvalor]").val();
+	var txtstatus = $("select[name=txtstatus]").val();
+	var txtcategoria = $("select[name=txtcategoria]").val();
+	var txtmarca = $("input[name=txtmarca]").val();
+	var txtunidade = $("select[name=txtunidade]").val();
+	var txtsetor = $("select[name=txtsetor]").val();
+	var txtsetoranterior = $("select[name=txtsetoranterior]").val();
+	var txtobs = $("textarea[name=txtobs]").val();
+	
+	ajax(txtpatrimonio,txtidentificacao,dtcadastro,dtaquisicao,txtnf,txtvalor,txtstatus,txtcategoria,txtmarca,txtunidade,txtsetor,txtsetoranterior,txtobs);
+
+	});
+
+});
+</script>
+</html>
+
+

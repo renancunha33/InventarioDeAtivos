@@ -39,7 +39,7 @@ ul.tab li a:focus, .active {background-color: #ccc;}
 </style>
 <ul class="tab">
   <li><a href="#" class="tablinks" onclick="openCity(event, 'Pesquisa')">Pesquisa</a></li>
-  <li><a href="#" class="tablinks" onclick="openCity(event, 'Cadastros')">Cadastros</a></li>
+  <li><a href="#" class="tablinks" onclick="openCity(event, 'Cadastros')">Cadastro de Ativo</a></li>
   <li><a href="#" class="tablinks" onclick="openCity(event, 'Geral')">Geral</a></li>
  
 </ul>
@@ -65,25 +65,19 @@ ul.tab li a:focus, .active {background-color: #ccc;}
   </tr>
 </table>
 </div>
-
-<div id="Cadastros" class="tabcontent">
-  <h3>Cadastros</h3>
-  <p>LEITURA E ESCRITA</p> 
-   <form action="#">
- 
-    <input type="text" id="input-name" placeholder="Name">
-    <input type="email" id="input-email" placeholder="Email address">
-    <input type="text" id="input-subject" placeholder="Subject"><br>
-    <textarea name="message" type="text" id="input-message" placeholder="Message"></textarea><br>
-    <!--input type="submit" value="Submit" id="input-submit"-->
-</form>
-</div>
-
 <div id="Geral" class="tabcontent">
   <h3>Geral</h3>
   <p>Em construção</p>
   <p>XOXOXOXXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXO</p>
 </div>
+<div id="Cadastros" class="tabcontent">
+  <h3>Cadastro de Ativos</h3>
+  <div class="container">
+  <?php include "formCadastroAtivos.html" ?>
+</div>
+</div>
+
+
 
 
 <script type="text/javascript">
