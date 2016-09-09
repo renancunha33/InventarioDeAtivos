@@ -4,11 +4,11 @@ $reso = mysqli_query($conexao,"select * from DAODS");
 	echo "
 		<table class='table table-condensed table-striped'>
 		<thead>
-		<tr >
-		<th>Nomes</th>
-		<th>Matriculas</th>
-		<th>Logins</th>
-		<th>Tipo de login</th>
+		<tr>
+		<th>Nome</th>
+		<th>Matricula</th>
+		<th>Login</th>
+		<th>Perfil</th>
 		</tr>
 	</thead>"; 
 	while($row = mysqli_fetch_array($reso)){  
