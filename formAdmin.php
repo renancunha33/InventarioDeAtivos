@@ -37,6 +37,7 @@ ul.tab li a:focus, .active {background-color: #ccc;}
   <li><a href="#" class="tablinks" onclick="openCity(event, 'Novo')">Novo Usuário</a></li>
   <li><a href="#" class="tablinks" onclick="openCity(event, 'Atualiza')">Atualizar Usuário</a></li>
   <li><a href="#" class="tablinks" onclick="openCity(event, 'CadAtivo')">Cadastrar ativo</a></li>
+  <li><a href="#" class="tablinks" onclick="openCity(event, 'PesquisaAtivo')">Pesquisar ativo</a></li>
 </ul>
 
 <div id="Pesquisa" class="tabcontent">
@@ -50,10 +51,15 @@ ul.tab li a:focus, .active {background-color: #ccc;}
  <h3>Atualizar usuário</h3>
  <?php include "atualizar.html" ?>
 </div>
-<div id="CadAtivo" class="tabcontent">
+ <div id="CadAtivo" class="tabcontent">
  <h3>Cadastrar ativo</h3>
   <?php include "formCadastroAtivos.html" ?>
  </div>
+ <div id="PesquisaAtivo" class="tabcontent">
+ <h3>Pesquisar ativos</h3>
+  <?php include "pesquisa.html" ?>
+  </div>
+
 
 <script type="text/javascript">
 function openCity(evt, cityName) {

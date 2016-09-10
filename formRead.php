@@ -38,45 +38,15 @@ ul.tab li a:focus, .active {background-color: #ccc;}
 }
 </style>
 <ul class="tab">
-  <li><a href="#" class="tablinks" onclick="openCity(event, 'Pesquisa')">Pesquisa</a></li>
-  <li><a href="#" class="tablinks" onclick="openCity(event, 'Cadastros')">Cadastros</a></li>
-  <li><a href="#" class="tablinks" onclick="openCity(event, 'Geral')">Geral</a></li>
- 
+  <li><a href="#" class="tablinks" onclick="openCity(event, 'PesquisaAtivo')">Pesquisa</a></li>
+  
 </ul>
 
-<div id="Pesquisa" class="tabcontent">
-  <h3>Pesquisa</h3>
-  <p>Em construção</p>
- <table style="width:100%" class="table table-striped">
-  <tr>
-    <th>Firstname</th>
-    <th>Lastname</th> 
-    <th>Age</th>
-  </tr>
-  <tr>
-    <td>SOMENTE LEITURA</td>
-    <td>SOMENTE LEITURA</td> 
-    <td>50</td>
-  </tr>
-  <tr>
-    <td>SOMENTE LEITURA</td>
-    <td>SOMENTE LEITURA</td> 
-    <td>94</td>
-  </tr>
-</table>
-</div>
+ <div id="PesquisaAtivo" class="tabcontent">
+ <h3>Pesquisar ativos</h3>
+  <?php include "pesquisa.html" ?>
+  </div>
 
-<div id="Cadastros" class="tabcontent">
-  <h3>SOMENTE LEITURA</h3>
-  <p>SOMENTE LEITURA</p> 
-   
-</div>
-
-<div id="Geral" class="tabcontent">
-  <h3>Geral</h3>
-  <p>Em construção</p>
-  <p>SOMENTE LEITURA SOMENTE LEITURA SOMENTE LEITURA SOMENTE LEITURA SOMENTE LEITURA</p>
-</div>
 
 
 <script type="text/javascript">

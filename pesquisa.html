@@ -1,0 +1,52 @@
+<html>
+<body>
+<div class="container">
+<form>
+<div class="form-group row">
+<div class="col-xs-6">
+<input type="text" class="form-control" name="txt" placeholder="Texto a ser pesquisado"value=""required="">
+</div>
+</div>
+Pesquisar por:
+<div class="form-group row">
+<div class="col-xs-6">
+<select class="form-control"id="txtsetor"name="txtsetor"required>
+	<option value="" selected disabled>Escolha uma opção</option>
+  <option>Identificação</option>
+  <option>Data do cadastro</option>
+  <option>Data de aquisição</option>
+  <option>Código de nota fiscal</option>
+  <option>Estado de conservação</option>
+  <option>Categoria</option>
+  <option>Unidade</option>
+  <option>Setor</option>
+</select>
+</div>
+</div>
+<div class="form-group row">
+<div class="col-xs-6">
+	Campo a serem buscados
+  <div class="checkbox">
+  <label><input type="checkbox" value="1">Identificação</label>
+  <label><input type="checkbox" value="2">Data do cadastro</label>
+  <label><input type="checkbox" value="3">Data de aquisição</label>
+  <label><input type="checkbox" value="4">Código de nota fiscal</label>
+  <label><input type="checkbox" value="5">Valor(R$)</label>
+  <label><input type="checkbox" value="6">Estado de conservação</label>
+  <label><input type="checkbox" value="7">Categoria</label>
+  <label><input type="checkbox" value="8">Unidade</label>
+  <label><input type="checkbox" value="9">Setor</label>
+</div>
+</div>
+</div>
+<div class="form-group row">
+<div class="col-xs-6">
+<input type="button" id="pesquisarAtivo" name="pesquisarAtivo" value="Pesquisar Ativo" class="btn btn-lg btn btn-success btn-block">
+</div>
+</div>
+</form>
+<div class="container" id="tabela">
+</div>
+</div>
+</body>
+<html>
