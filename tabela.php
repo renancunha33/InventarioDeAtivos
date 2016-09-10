@@ -56,5 +56,6 @@ function printContent(el){
 	document.body.innerHTML =  "<h1>Relatório de usúários<h1>"+printcontent;
 	window.print();
 	document.body.innerHTML = restorepage;
+	location.reload();
 }
 </script>

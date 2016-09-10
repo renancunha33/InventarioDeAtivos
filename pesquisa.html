@@ -47,7 +47,7 @@ Pesquisar por:
 </form>
 <div class="form-group row">
 <div class="col-xs-8">
-<button id="relat"class="btn btn-info btn-sm" style="float:left;" onclick="printContent('tabelaAtivos')" disabled>Relatório (BETA)</button>
+<button id="relat"class="btn btn-info btn-sm" style="float:left;" onclick="printContent('tabelaAtivos')" disabled>Gerar relatório (BETA)</button>
 </div>
 </div>
 <div class="form-group row">
@@ -58,7 +58,7 @@ Pesquisar por:
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="http://digitalbush.com/wp-content/uploads/2014/10/jquery.maskedinput.js"></script>
-<script type="text/javascript" src="https://github.com/igorescobar/jQuery-Mask-Plugin/src/jquery.mask.min.js"></script>
+<script type="text/javascript" src="bootstrap/jquery.mask.js"></script>
 <script type="text/javascript">
 	$("input[name=pesquisarAtivo]").click(function(){
 
@@ -108,6 +108,7 @@ function printContent(el){
 	window.print();
 	document.body.innerHTML = restorepage;
 	document.getElementById("relat").disabled = true;
+	location.reload();
 }
 </script>
 </body>

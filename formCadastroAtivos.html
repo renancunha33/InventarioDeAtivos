@@ -167,7 +167,7 @@
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="http://digitalbush.com/wp-content/uploads/2014/10/jquery.maskedinput.js"></script>
-<script type="text/javascript" src="https://github.com/igorescobar/jQuery-Mask-Plugin/src/jquery.mask.min.js"></script>
+<script type="text/javascript" src="https://github.com/igorescobar/jQuery-Mask-Plugin/tree/master/src/jquery.mask.js"></script>
 <script type="text/javascript">
 function ajax(txtpatrimonio,txtidentificacao,dtcadastro,dtaquisicao,txtnf,txtvalor,txtstatus,txtcategoria,txtmarca,txtunidade,txtsetor,txtsetoranterior,txtobs){
 	info = {"txtpatrimonio":txtpatrimonio,"txtidentificacao":txtidentificacao,"dtcadastro":dtcadastro,"dtaquisicao":dtaquisicao,"txtnf":txtnf,"txtvalor":txtvalor,"txtstatus":txtstatus,"txtcategoria":txtcategoria,"txtmarca":txtmarca,"txtunidade":txtunidade,"txtsetor":txtsetor,"txtsetoranterior":txtsetoranterior,"txtobs":txtobs};
@@ -205,9 +205,16 @@ $(document).ready(function(){
 	
 	ajax(txtpatrimonio,txtidentificacao,dtcadastro,dtaquisicao,txtnf,txtvalor,txtstatus,txtcategoria,txtmarca,txtunidade,txtsetor,txtsetoranterior,txtobs);
 
-	});
-
+	});	
 });
+</script>
+<script>
+	jQuery(function($){
+		 $("#txtpatrimonio").mask("99999");
+		 // $("#txtvalor").mask("??????9.99");	
+		 $("#txtnf").mask("999999");
+		
+	});
 </script>
 </html>
 

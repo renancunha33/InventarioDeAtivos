@@ -11,7 +11,7 @@
 </head>
 <body>
 	<center>
-		<form class="form-signin" method= "POST" id="formulario">
+		<form class="form-signin" method= "POST" id="formulario" autocomplete="off">
 			<input type="text" class="form-control"name="nome" placeholder="Usuario"value=""required="">
 			<br>
 			<input type="password" class="form-control"name="senha" placeholder="Senha"value=""required="">
@@ -37,7 +37,7 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="http://digitalbush.com/wp-content/uploads/2014/10/jquery.maskedinput.js"></script>
-<script type="text/javascript" src="https://github.com/igorescobar/jQuery-Mask-Plugin/src/jquery.mask.min.js"></script>
+<script type="text/javascript" src="bootstrap/jquery.mask.js"></script>
 <script type="text/javascript">
 function ajax(nome,senha,nomereal,matricula,isadm){
 	info = {"nome" : nome, "senha" : senha, "nomereal" : nomereal, "matricula" : matricula, "isadm" : isadm};

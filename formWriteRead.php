@@ -38,23 +38,20 @@ ul.tab li a:focus, .active {background-color: #ccc;}
 }
 </style>
 <ul class="tab">
+<li><a href="#" class="tablinks" onclick="openCity(event, 'Cadastros')">Cadastro de Ativo</a></li>
   <li><a href="#" class="tablinks" onclick="openCity(event, 'PesquisaAtivo')">Pesquisa</a></li>
-  <li><a href="#" class="tablinks" onclick="openCity(event, 'Cadastros')">Cadastro de Ativo</a></li>
- 
- 
-</ul>
-
+  
+ </ul>
+<div id="Cadastros" class="tabcontent">
+  <h3>Cadastro de Ativos</h3>
+   <?php include "formCadastroAtivos.html" ?>
+</div>
  <div id="PesquisaAtivo" class="tabcontent">
  <h3>Pesquisar ativos</h3>
   <?php include "pesquisa.html" ?>
   </div>
   
-<div id="Cadastros" class="tabcontent">
-  <h3>Cadastro de Ativos</h3>
-  <div class="container">
-  <?php include "formCadastroAtivos.html" ?>
-</div>
-</div>
+
 
 
 

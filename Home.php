@@ -8,12 +8,13 @@
 	<!-- Custom styles for this template -->
 	<link href="./bootstrap/signin.css" rel="stylesheet">
 	<script src="./bootstrap/ie-emulation-modes-warning.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
 	<title>Tela Inicial</title>
 </head>
 <body>
 	<div class="container">
 		<?php
+		
 		//error_reporting(0);
 		//ini_set('display_errors', 0);
 		include "control/conecta_mysql.inc";
@@ -35,6 +36,7 @@
 				</form>
 				";
 			}else{
+				session_start();
 				
 				$sql= "select LOGIN.*, DAODS.* from LOGIN inner join DAODS on '$user' = DAODS.cd_login";
 				$query = mysqli_query($conexao,$sql);
