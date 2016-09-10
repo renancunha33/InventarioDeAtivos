@@ -34,8 +34,8 @@
 	
 	$reso = mysqli_query($conexao, "select * from ATIVO WHERE `$pesquisa` LIKE '%$string%'");
 	$eco = "<table class='table table-condensed table-striped'>";
-	$eco = $eco.'<thead>
-<tr>';
+	$eco = $eco.'<thead><tr>';
+	$eco=$eco."<th>Patrimônio</th>";
 	if($_POST['cbidentificacao']== 'true')
 {
     $eco=$eco."<th>Identificação</th>";
@@ -87,6 +87,7 @@ if($_POST['cbsetor']== 'true')
 </thead>';
 	while($row = mysqli_fetch_array($reso)){  
 	$eco = $eco."</tr>";
+	 $eco=$eco."<td>".$row['cd_patrimonio']."</td>";
 	if($_POST['cbidentificacao']== 'true')
 {
     $eco=$eco."<td>".$row['ds_identificacao']."</td>";
