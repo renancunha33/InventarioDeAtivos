@@ -3,25 +3,10 @@
 <form method="post">
 <div class="form-group row">
 <div class="col-xs-6">
-<input type="text" class="form-control" name="txtString" placeholder="Texto a ser pesquisado"value=""required="">
+<input type="text" class="form-control" name="txtString" placeholder="Digite o Código do Ativo"value=""required="">
 </div>
 </div>
 Pesquisar por:
-<div class="form-group row">
-<div class="col-xs-6">
-<select class="form-control" name="txtsetorDel">
-  <option value="" selected disabled>Escolha uma opção</option>
-  <option>Identificação</option>
-  <option>Data do cadastro</option>
-  <option>Data de aquisição</option>
-  <option>Código de nota fiscal</option>
-  <option>Estado de conservação</option>
-  <option>Categoria</option>
-  <option>Unidade</option>
-  <option>Setor</option>
-</select>
-</div>
-</div>
 <div class="form-group row">
 <div class="col-xs-6">
 <input type="button" id="pesquisarAtivo" name="pesquisarAtivoDel" value="Pesquisar Ativo" class="btn btn-lg btn btn-success btn-block">
@@ -34,6 +19,15 @@ Pesquisar por:
 </div>
 </div>
 </div>
+<form action='post'>
+<div class="form-group row">
+<div class="col-xs-6">
+<button type="submit" name="deletarAtivo" id="deletarAtivo" value="" class="btn btn-lg btn btn-danger btn-block" disabled>
+DELETAR
+</button>
+</div>
+</div>
+</form>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script type="text/javascript">
 	$("input[name=pesquisarAtivoDel]").click(function(){
@@ -51,9 +45,29 @@ Pesquisar por:
 	url:"control/searchAtivoDel.php",
 	data: info,
 	success: function (response) {
+	
          	   document.getElementById("tabelaAtivos2").innerHTML = response;
+			   document.getElementById("deletarAtivo").disabled = false;
+			    document.getElementById("deletarAtivo").value = txtString;
             }
 	});
+	return false;
+});
+</script>
+<script type='text/javascript'>
+	$('button[name=deletarAtivo]').click(function(){
+	//alert($(this).attr('value'));	
+	var nome = $(this).attr('value');
+	info = {'nome' : nome};
+	$.ajax({
+	type:'post',
+	url:'control/deleteAtivo.php',
+	data: info,
+	success: function (response) {
+            alert(response);
+			location.reload();
+	}
+			});
 	return false;
 });
 </script>
