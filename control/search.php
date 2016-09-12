@@ -1,5 +1,7 @@
 
  <?php
+error_reporting(0);
+ini_set('display_errors', 0);
 	include 'conecta_mysql.inc';
 	$user = $_POST['nome'];
 	$reso = mysqli_query($conexao, "select DAODS.*,LOGIN.* from DAODS inner join LOGIN on DAODS.cd_login = LOGIN.cd_login WHERE LOGIN.cd_login = '$user'");
