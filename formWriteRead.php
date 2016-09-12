@@ -40,8 +40,8 @@ ul.tab li a:focus, .active {background-color: #ccc;}
 <ul class="tab">
 <li><a href="#" class="tablinks" onclick="openCity(event, 'Cadastros')">Cadastro de Ativo</a></li>
   <li><a href="#" class="tablinks" onclick="openCity(event, 'PesquisaAtivo')">Pesquisa</a></li>
-   <li><a href="#" class="tablinks" onclick="openCity(event, 'DeletaAtivo')">Deletar ativo</a></li>
-  
+  <li><a href="#" class="tablinks" onclick="openCity(event, 'DeletaAtivo')">Deletar ativo</a></li>
+  <li><a href="#" class="tablinks" onclick="openCity(event, 'AtualizaAtivo')">Atualizar ativo</a></li>  
  </ul>
 <div id="Cadastros" class="tabcontent">
   <h3>Cadastro de Ativos</h3>
@@ -55,13 +55,10 @@ ul.tab li a:focus, .active {background-color: #ccc;}
  <h3>Deletar ativos</h3>
   <?php include "formdelativo.html" ?>
 </div>
-
-  
-
-
-
-
-
+<div id="AtualizaAtivo" class="tabcontent">
+ <h3>Atualizar ativo</h3>
+  <?php include "formAtualizaAtivos.html" ?>
+</div>
 <script type="text/javascript">
 function openCity(evt, cityName) {
     // Declare all variables

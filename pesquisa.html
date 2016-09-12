@@ -42,6 +42,9 @@ Pesquisar por:
 <div class="col-xs-6">
 <input type="button" id="pesquisarAtivo" name="pesquisarAtivo" value="Pesquisar Ativo" class="btn btn-lg btn btn-success btn-block">
 </div>
+<div class="col-xs-6">
+<input type="button" id="pesquisarAtivoTudo" name="pesquisarAtivoTudo" value="Exibir TODOS os ativos" class="btn btn-lg btn btn-info btn-block">
+</div>
 </div>
 </form>
 <div class="form-group row">
@@ -109,5 +112,19 @@ function printContent(el){
 	location.reload();
 }
 </script>
-</body>
+<script type="text/javascript">
+$("input[name=pesquisarAtivoTudo]").click(function(){
+
+	$.ajax({
+	type:"POST",
+	url:"control/searchTodosAtivos.php",
+	success: function (response) {
+                   document.getElementById("relat").disabled = false;
+				   document.getElementById("tabelaAtivos").innerHTML = response;
+            }
+	});
+	return false;
+});
+</script>
+</body>
 </html>
