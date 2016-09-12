@@ -24,7 +24,7 @@
 <form action="POST" id="formAtivo">
 <div class="form-group row">
 <div class="col-xs-8">
- <input type="text" id="txtpatrimonioUp" name="txtpatrimonioUp" class="form-control" placeholder="Código de patrimônio" required>
+ <input type="text" id="txtpatrimonioUp" name="txtpatrimonioUp" class="form-control" placeholder="Código de patrimônio" disabled>
 </div>
 </div>
 <div class="form-group row">
@@ -221,7 +221,7 @@
 });
 </script>
 <script type="text/javascript">
-function ajax(txtpatrimonioUp,txtidentificacaoUp,dtcadastroUp,dtaquisicaoUp,txtnfUp,txtvalorUp,txtstatusUp,txtcategoriaUp,txtmarcaUp,txtunidadeUp,txtsetorUp,txtsetoranteriorUp,txtobsUp){
+function ajax3(txtpatrimonioUp,txtidentificacaoUp,dtcadastroUp,dtaquisicaoUp,txtnfUp,txtvalorUp,txtstatusUp,txtcategoriaUp,txtmarcaUp,txtunidadeUp,txtsetorUp,txtsetoranteriorUp,txtobsUp){
 	info = {"txtpatrimonioUp":txtpatrimonioUp,"txtidentificacaoUp":txtidentificacaoUp,"dtcadastroUp":dtcadastroUp,"dtaquisicaoUp":dtaquisicaoUp,"txtnfUp":txtnfUp,"txtvalorUp":txtvalorUp,"txtstatusUp":txtstatusUp,"txtcategoriaUp":txtcategoriaUp,"txtmarcaUp":txtmarcaUp,"txtunidadeUp":txtunidadeUp,"txtsetorUp":txtsetorUp,"txtsetoranteriorUp":txtsetoranteriorUp,"txtobsUp":txtobsUp};
 	
 	$.ajax({
@@ -251,7 +251,7 @@ $(document).ready(function(){
 	var txtsetoranteriorUp = $("select[name=txtsetoranteriorUp]").val();
 	var txtobsUp = $("textarea[name=txtobsUp]").val();
 	
-	ajax(txtpatrimonioUp,txtidentificacaoUp,dtcadastroUp,dtaquisicaoUp,txtnfUp,txtvalorUp,txtstatusUp,txtcategoriaUp,txtmarcaUp,txtunidadeUp,txtsetorUp,txtsetoranteriorUp,txtobsUp);
+	ajax3(txtpatrimonioUp,txtidentificacaoUp,dtcadastroUp,dtaquisicaoUp,txtnfUp,txtvalorUp,txtstatusUp,txtcategoriaUp,txtmarcaUp,txtunidadeUp,txtsetorUp,txtsetoranteriorUp,txtobsUp);
 
 	});	
 });
