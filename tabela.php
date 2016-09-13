@@ -1,4 +1,5 @@
   <button class="btn btn-info btn-sm" style="float: right;" onclick="printContent('tabela')">Relatório (BETA)</button>
+  <?php include "export.html"?>
  <div id="tabela">
  <?php
 include 'control/conecta_mysql.inc';

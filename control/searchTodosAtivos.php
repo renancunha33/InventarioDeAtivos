@@ -32,7 +32,8 @@
   $eco=$eco."<th>Setor</th>";
 
 	
-	$eco = $eco.'</tr></thead>';
+	$eco = $eco.'</tr></thead>\n';
+	
 	while($row = mysqli_fetch_array($reso)){  
 	$eco = $eco."</tr>";
 	 $eco=$eco."<td>".$row['cd_patrimonio']."</td>";
@@ -63,7 +64,7 @@
     $eco=$eco."<td>".$row['ds_setor']."</td>";
     
 
-	$eco = $eco."</tr>";		
+	$eco = $eco."</tr>\n";		
 	}
 	$eco = $eco."</table>";
 	
