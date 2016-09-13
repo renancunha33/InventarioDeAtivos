@@ -32,7 +32,7 @@
   $eco=$eco."<th>Setor</th>";
 
 	
-	$eco = $eco.'</tr></thead>\n';
+	$eco = $eco.'</tr></thead>';
 	
 	while($row = mysqli_fetch_array($reso)){  
 	$eco = $eco."</tr>";
