@@ -33,7 +33,7 @@ mysqli_query($conexao, 'CREATE TABLE IF NOT EXISTS `ATIVO` (
  `ds_unidade` varchar(20) NOT NULL,
  `ds_setor` varchar(20) NOT NULL,
  `ds_setoranterior` varchar(20) NOT NULL,
- `ds_observações` text,
+ `ds_observacoes` text,
  PRIMARY KEY (`cd_patrimonio`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 ') or die (mysql_error());
