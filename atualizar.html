@@ -21,8 +21,8 @@ Digite o login do usuario que deseja alterar
 </div>
 </form>
 </center>
-<div id="box" class="container" style="visibility: hidden;">
-<form class="form-signin" method= "POST" id="formulario">
+<div id="boxup" class="container" style="visibility: hidden;">
+<form class="form-signin" method= "POST" id="formularioUpdate">
 <span id="login0" value="" name="nome2">
 <input type="password" class="form-control"name="senha2" id="senha"placeholder="Senha"value=""required="">
 <input type="text" class="form-control" name="nomereal2"id="nomereal" placeholder="Nome real"value=""required="">
@@ -31,7 +31,7 @@ Digite o login do usuario que deseja alterar
 <br>
 Tipo de usuario
 <br>
-<select class="form-control"name="isadm2">
+<select class="form-control"name="isadm2" id="isadm2">
 <option>Administrador
 </option>
 <option>Apenas leitura
@@ -63,13 +63,18 @@ Tipo de usuario
 	success: function (res) {
 	
 	res = JSON.parse(res);
+	if(res[0]!=""){
 	document.getElementById("login0").value = nome;
 	document.getElementById("senha").value = res[2];
 	document.getElementById("nomereal").value = res[1];
 	document.getElementById("matricula").value = res[0];
+	document.getElementById("isadm2").value = res[3];
 
-			var divBox = document.getElementById('box');
+			var divBox = document.getElementById('boxup');
 			divBox.style.visibility='visible';
+			}else{
+			alert("Cadastro não encontrado!");
+			}
 		}	  
 	});
  return false;
@@ -91,17 +96,15 @@ Tipo de usuario
 	url:"control/update.php",
 	data: info,
 	success: function (response) {
-            if(response.status == "sucesso") {
-                alert(response);
-            } else{
-                   alert(response);
-				  
-            }
+            
+                alert(response);				
+          
 			 setInterval(function(){
 			$("#Pesquisa").load("tabela.php");
 		}, 1000);
             }
 			});
+			document.getElementById("boxup").reset();
 			 return false;
 });
 </script>

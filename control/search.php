@@ -8,8 +8,9 @@ ini_set('display_errors', 0);
 	$row = mysqli_fetch_array($reso); 
 	$matricula = $row['ds_matricula'];
 	$nome = $row['ds_nome'];
+	$isadm = $row['ds_isadm'];
 	$senha = base64_decode($row['ds_senha']);
-	$array = array("$matricula","$nome","$senha");
+	$array = array("$matricula","$nome","$senha","$isadm");
 	echo json_encode(array_values($array));
 
 	

@@ -11,7 +11,7 @@
 <form action="POST" id="formAtivo">
 <div class="form-group row">
 <div class="col-xs-8">
- <input type="text" id="txtpatrimonio" name="txtpatrimonio" class="form-control" placeholder="Código de patrimônio" required>
+ <input type="number" id="txtpatrimonio" name="txtpatrimonio" class="form-control" placeholder="Código de patrimônio" required>
 </div>
 </div>
 <div class="form-group row">
@@ -38,13 +38,13 @@
 <div class="form-group row">
   
   <div class="col-xs-8">
-    <input class="form-control" type="text"  placeholder="Código de nota fiscal" id="txtnf" name="txtnf">
+    <input class="form-control" type="number"  placeholder="Código de nota fiscal" id="txtnf" name="txtnf">
   </div>
 </div>
 <div class="form-group row">
   
   <div class="col-xs-8">
-    <input class="form-control" type="text"  placeholder="Valor(R$)" id="txtvalor" name="txtvalor">
+    <input class="form-control" type="number"  placeholder="Valor(R$)" id="txtvalor" name="txtvalor">
   </div>
 </div>
 <div class="form-group row">
@@ -91,13 +91,15 @@
   <div class="col-xs-6">
 	<select class="form-control" id="txtunidade" name="txtunidade"required>
 	<option value="" selected disabled>Escolha uma opção</option>
+  <option>Rondonópolis (MT)</option>  
+  <option>Cambé (PR)</option>  
+  <option>Colombo (PR)</option>
+  <option>Curitiba (PR)</option>
+  <option>Cubatão (SP)</option>
+  <option>Santos (SP)</option>
+  <option>Bauru (SP)</option>
   <option>Esteio (RS)</option>
   <option>Itajaí (SC)</option>
-  <option>Cambé (PR)</option>
-  <option>Colombo (PR)</option>
-  <option>Cubatão (SP)</option>
-  <option>Bauru (SP)</option>
-  <option>Curitiba (PR)</option>
 </select>
 </div>
 </div>
@@ -112,6 +114,7 @@
   <option>PCM</option>
   <option>SESMT</option>
   <option>QA</option>
+  <option>SIF</option>
   <option>TERMINAL</option>
   <option>GERENCIA</option>
   <option>OPERAÇÃO</option>
@@ -122,6 +125,9 @@
   <option>BALANÇA</option>
   <option>ESTOQUE</option>
   <option>FINANCEIRO</option>
+  <option>INTERMODAL</option>
+  <option>GATE</option>
+  <option>OUTRO</option>
   </select>
 </div>
 
@@ -138,6 +144,7 @@
   <option>PCM</option>
   <option>SESMT</option>
   <option>QA</option>
+  <option>SIF</option>
   <option>TERMINAL</option>
   <option>GERENCIA</option>
   <option>OPERAÇÃO</option>
@@ -148,6 +155,9 @@
   <option>BALANÇA</option>
   <option>ESTOQUE</option>
   <option>FINANCEIRO</option>
+  <option>INTERMODAL</option>
+  <option>GATE</option>
+  <option>OUTRO</option>
   </select>
 </div>
 </div>
@@ -166,8 +176,6 @@
 <br><br>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="http://digitalbush.com/wp-content/uploads/2014/10/jquery.maskedinput.js"></script>
-<script type="text/javascript" src="https://github.com/igorescobar/jQuery-Mask-Plugin/tree/master/src/jquery.mask.js"></script>
 <script type="text/javascript">
 function ajax(txtpatrimonio,txtidentificacao,dtcadastro,dtaquisicao,txtnf,txtvalor,txtstatus,txtcategoria,txtmarca,txtunidade,txtsetor,txtsetoranterior,txtobs){
 	info = {"txtpatrimonio":txtpatrimonio,"txtidentificacao":txtidentificacao,"dtcadastro":dtcadastro,"dtaquisicao":dtaquisicao,"txtnf":txtnf,"txtvalor":txtvalor,"txtstatus":txtstatus,"txtcategoria":txtcategoria,"txtmarca":txtmarca,"txtunidade":txtunidade,"txtsetor":txtsetor,"txtsetoranterior":txtsetoranterior,"txtobs":txtobs};
@@ -207,14 +215,6 @@ $(document).ready(function(){
 
 	});	
 });
-</script>
-<script>
-	jQuery(function($){
-		 $("#txtpatrimonio").mask("99999");
-		 // $("#txtvalor").mask("??????9.99");	
-		 $("#txtnf").mask("999999");
-		
-	});
 </script>
 </html>
 

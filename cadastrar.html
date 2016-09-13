@@ -11,11 +11,11 @@
 </head>
 <body>
 	<center>
-		<form class="form-signin" method= "POST" id="formulario" autocomplete="off">
-			<input type="text" class="form-control"name="nome" placeholder="Usuario"value=""required="">
+		<form class="form-signin" method="POST">
+			<input type="text" class="form-control"name="nomeC" placeholder="Usuario"value=""required>
 			<br>
-			<input type="password" class="form-control"name="senha" placeholder="Senha"value=""required="">
-			<input type="text" class="form-control"name="nomereal" placeholder="Nome real"value=""required="">
+			<input type="password" class="form-control"name="senhaC" placeholder="Senha"value=" "required>
+			<input type="text" class="form-control"name="nomereal" placeholder="Nome real"value=" "required>
 			<br>
 			<input type="text" class="form-control"name="matricula" id="matriculaCadastro" placeholder="Matricula"value=""required="">
 			<br>
@@ -59,8 +59,8 @@ function ajax(nome,senha,nomereal,matricula,isadm){
 }
 $(document).ready(function(){
 	$("input[name=enviar]").click(function(){
-	var nome = $("input[name=nome]").val();
-	var senha = $("input[name=senha]").val();
+	var nome = $("input[name=nomeC]").val();
+	var senha = $("input[name=senhaC]").val();
 	var nomereal = $("input[name=nomereal]").val();
 	var matricula = $("input[name=matricula]").val();
 	var isadm = $("select[name=isadm]").val();

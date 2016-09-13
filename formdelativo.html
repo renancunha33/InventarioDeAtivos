@@ -45,10 +45,14 @@ DELETAR
 	data: info,
 	success: function (response) {
 	
+	if(response != 0){
          	   document.getElementById("tabelaAtivos2").innerHTML = response;
 			   document.getElementById("deletarAtivo").disabled = false;
 			    document.getElementById("deletarAtivo").value = txtString;
-            }
+            }else{
+			alert("Cadastro inválido!");
+			}
+			}
 	});
 	return false;
 });
@@ -63,6 +67,7 @@ DELETAR
 	url:'control/deleteAtivo.php',
 	data: info,
 	success: function (response) {
+	i
             alert(response);
 			location.reload();
 	}

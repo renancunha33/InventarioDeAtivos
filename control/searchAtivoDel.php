@@ -6,6 +6,8 @@ ini_set('display_errors', 0);
 	$string = $_POST['txtString'];
 		
 	$reso = mysqli_query($conexao, "select * from ATIVO WHERE cd_patrimonio = '$string'");
+	$linha= mysqli_num_rows($reso);
+	if($linha != 0){
 	$eco = "<table class='table table-condensed table-striped'>";
 	$eco = $eco.'<thead><tr>';
 	$eco=$eco."<th>Patrimônio</th>";
@@ -20,5 +22,7 @@ ini_set('display_errors', 0);
 	$eco = $eco."</tr>";		
 	$eco = $eco."</table>";
 	echo $eco;
-	
+	}else{
+		print 0;
+	}
   ?>

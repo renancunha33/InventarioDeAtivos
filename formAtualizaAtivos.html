@@ -11,7 +11,7 @@
 <form method="post">
 <div class="form-group row">
 <div class="col-xs-6">
-<input type="text" class="form-control" name="txtStringUp" placeholder="Digite o Código do Ativo"value=""required="">
+<input type="number" class="form-control" name="txtStringUp" placeholder="Digite o Código do Ativo"value=""required="">
 </div>
 </div>
 <div class="form-group row">
@@ -24,7 +24,7 @@
 <form action="POST" id="formAtivo">
 <div class="form-group row">
 <div class="col-xs-8">
- <input type="text" id="txtpatrimonioUp" name="txtpatrimonioUp" class="form-control" placeholder="Código de patrimônio" disabled>
+ <input type="number" id="txtpatrimonioUp" name="txtpatrimonioUp" class="form-control" placeholder="Código de patrimônio" disabled>
 </div>
 </div>
 <div class="form-group row">
@@ -51,13 +51,13 @@
 <div class="form-group row">
   
   <div class="col-xs-8">
-    <input class="form-control" type="text"  placeholder="Código de nota fiscal" id="txtnfUp" name="txtnfUp">
+    <input class="form-control" type="number"  placeholder="Código de nota fiscal" id="txtnfUp" name="txtnfUp">
   </div>
 </div>
 <div class="form-group row">
   
   <div class="col-xs-8">
-    <input class="form-control" type="text"  placeholder="Valor(R$)" id="txtvalorUp" name="txtvalorUp">
+    <input class="form-control" type="number"  placeholder="Valor(R$)" id="txtvalorUp" name="txtvalorUp">
   </div>
 </div>
 <div class="form-group row">
@@ -104,13 +104,15 @@
   <div class="col-xs-6">
 	<select class="form-control" id="txtunidadeUp" name="txtunidadeUp"required>
 	<option value="" selected disabled>Escolha uma opção</option>
-  <option>Esteio (RS)</option>
-  <option>Itajaí (SC)</option>
-  <option>Cambé (PR)</option>
+  <option>Rondonópolis (MT)</option>  
+  <option>Cambé (PR)</option>  
   <option>Colombo (PR)</option>
-  <option>Cubatão (SP)</option>
-  <option>Bauru (SP)</option>
   <option>Curitiba (PR)</option>
+  <option>Cubatão (SP)</option>
+  <option>Santos (SP)</option>
+  <option>Bauru (SP)</option>
+  <option>Esteio (RS)</option>
+  <option>Itajaí (SC)</option> 
 </select>
 </div>
 </div>
@@ -125,6 +127,7 @@
   <option>PCM</option>
   <option>SESMT</option>
   <option>QA</option>
+  <option>SIF</option>
   <option>TERMINAL</option>
   <option>GERENCIA</option>
   <option>OPERAÇÃO</option>
@@ -135,6 +138,9 @@
   <option>BALANÇA</option>
   <option>ESTOQUE</option>
   <option>FINANCEIRO</option>
+  <option>INTERMODAL</option>
+  <option>GATE</option>
+  <option>OUTRO</option>
   </select>
 </div>
 
@@ -151,6 +157,7 @@
   <option>PCM</option>
   <option>SESMT</option>
   <option>QA</option>
+  <option>SIF</option>
   <option>TERMINAL</option>
   <option>GERENCIA</option>
   <option>OPERAÇÃO</option>
@@ -161,6 +168,9 @@
   <option>BALANÇA</option>
   <option>ESTOQUE</option>
   <option>FINANCEIRO</option>
+  <option>INTERMODAL</option>
+  <option>GATE</option>
+  <option>OUTRO</option>
   </select>
 </div>
 </div>
@@ -179,9 +189,6 @@
 <br><br>
 </body>
 <script type="text/javascript"src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script type="text/javascript"src="http://digitalbush.com/wp-content/uploads/2014/10/jquery.maskedinput.js"></script>
-<script type="text/javascript" src="https://github.com/igorescobar/jQuery-Mask-Plugin/tree/master/src/jquery.mask.js"></script>
-<script type="text/javascript"src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script type="text/javascript"src="bootstrap/jquery.mask.js"></script>
 <script type="text/javascript">
 	$("input[name=pesquisarAtivoUp]").click(function(){
@@ -198,7 +205,10 @@
 	success: function (res) {
 	
 	response = JSON.parse(res);
-	//alert(response[0]);
+	
+	if(response[0]==""){
+	alert("Código não encontrado");
+	}else{
 	document.getElementById("txtpatrimonioUp").value = response[0];
 	document.getElementById("txtidentificacaoUp").value = response[1];
 	document.getElementById("dtcadastroUp").value = response[2];
@@ -214,6 +224,7 @@
 	document.getElementById("txtobsUp").value = response[12];	
 	
 	document.getElementById("boxUpdate").style.visibility = "visible";
+	}
     }
 	});
 	
@@ -255,14 +266,6 @@ $(document).ready(function(){
 
 	});	
 });
-</script>
-<script>
-	jQuery(function($){
-		 $("#txtpatrimonioUp").mask("99999");
-		 // $("#txtvalor").mask("??????9.99");	
-		 $("#txtnfUp").mask("999999");
-		
-	});
 </script>
 </html>
 
