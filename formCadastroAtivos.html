@@ -177,7 +177,7 @@
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script type="text/javascript">
-function ajax(txtpatrimonio,txtidentificacao,dtcadastro,dtaquisicao,txtnf,txtvalor,txtstatus,txtcategoria,txtmarca,txtunidade,txtsetor,txtsetoranterior,txtobs){
+function ajaxA(txtpatrimonio,txtidentificacao,dtcadastro,dtaquisicao,txtnf,txtvalor,txtstatus,txtcategoria,txtmarca,txtunidade,txtsetor,txtsetoranterior,txtobs){
 	info = {"txtpatrimonio":txtpatrimonio,"txtidentificacao":txtidentificacao,"dtcadastro":dtcadastro,"dtaquisicao":dtaquisicao,"txtnf":txtnf,"txtvalor":txtvalor,"txtstatus":txtstatus,"txtcategoria":txtcategoria,"txtmarca":txtmarca,"txtunidade":txtunidade,"txtsetor":txtsetor,"txtsetoranterior":txtsetoranterior,"txtobs":txtobs};
 	//alert(info);
 	$.ajax({
@@ -185,14 +185,12 @@ function ajax(txtpatrimonio,txtidentificacao,dtcadastro,dtaquisicao,txtnf,txtval
 	url:"control/insertAtivo.php",
 	data: info,
 	success: function (response) {
-            if(response.status == "sucesso") {
-                alert(response);
-				
-            } else{
+          
                    alert(response);
+				   document.getElementById("formAtivo").reset();
 		         } 
-				 document.getElementById("formAtivo").reset();
-		 }
+				
+		 
 			});
 }
 $(document).ready(function(){
@@ -211,7 +209,7 @@ $(document).ready(function(){
 	var txtsetoranterior = $("select[name=txtsetoranterior]").val();
 	var txtobs = $("textarea[name=txtobs]").val();
 	
-	ajax(txtpatrimonio,txtidentificacao,dtcadastro,dtaquisicao,txtnf,txtvalor,txtstatus,txtcategoria,txtmarca,txtunidade,txtsetor,txtsetoranterior,txtobs);
+	ajaxA(txtpatrimonio,txtidentificacao,dtcadastro,dtaquisicao,txtnf,txtvalor,txtstatus,txtcategoria,txtmarca,txtunidade,txtsetor,txtsetoranterior,txtobs);
 
 	});	
 });

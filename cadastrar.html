@@ -12,10 +12,10 @@
 <body>
 	<center>
 		<form class="form-signin" method="POST">
-			<input type="text" class="form-control"name="nomeC" placeholder="Usuario"value=""required>
+			<input type="text" class="form-control"name="nome" placeholder="Usuario"value=""required>
 			<br>
-			<input type="password" class="form-control"name="senhaC" placeholder="Senha"value=" "required>
-			<input type="text" class="form-control"name="nomereal" placeholder="Nome real"value=" "required>
+			<input type="password" class="form-control"name="senha" placeholder="Senha"value=""required>
+			<input type="text" class="form-control"name="nomereal" placeholder="Nome real"value=""required>
 			<br>
 			<input type="text" class="form-control"name="matricula" id="matriculaCadastro" placeholder="Matricula"value=""required="">
 			<br>
@@ -30,7 +30,7 @@
 			</option> 
             </select>				
 			<br>
-			<input type="button" name="enviar" value="Enviar" class="btn btn-lg btn btn-success btn-block">
+			<input type="button" name="salvarUsuario" value="Enviar" class="btn btn-lg btn btn-success btn-block">
 		</form>
 	</center>
 </body>
@@ -39,7 +39,7 @@
 <script src="http://digitalbush.com/wp-content/uploads/2014/10/jquery.maskedinput.js"></script>
 <script type="text/javascript" src="bootstrap/jquery.mask.js"></script>
 <script type="text/javascript">
-function ajax(nome,senha,nomereal,matricula,isadm){
+function ajaxU(nome,senha,nomereal,matricula,isadm){
 	info = {"nome" : nome, "senha" : senha, "nomereal" : nomereal, "matricula" : matricula, "isadm" : isadm};
 	$.ajax({
 	type:"post",
@@ -58,13 +58,13 @@ function ajax(nome,senha,nomereal,matricula,isadm){
 			});
 }
 $(document).ready(function(){
-	$("input[name=enviar]").click(function(){
-	var nome = $("input[name=nomeC]").val();
-	var senha = $("input[name=senhaC]").val();
+	$("input[name=salvarUsuario]").click(function(){
+	var nome = $("input[name=nome]").val();
+	var senha = $("input[name=senha]").val();
 	var nomereal = $("input[name=nomereal]").val();
 	var matricula = $("input[name=matricula]").val();
 	var isadm = $("select[name=isadm]").val();
-	ajax(nome,senha,nomereal,matricula,isadm);
+	ajaxU(nome,senha,nomereal,matricula,isadm);
 });
 
 });
