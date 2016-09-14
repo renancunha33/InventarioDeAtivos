@@ -40,6 +40,7 @@ ul.tab li a:focus, .active {background-color: #ccc;}
   <li><a href="#" class="tablinks" onclick="openCity(event, 'PesquisaAtivo')">Pesquisar ativo</a></li>
   <li><a href="#" class="tablinks" onclick="openCity(event, 'DeletaAtivo')">Deletar ativo</a></li>
   <li><a href="#" class="tablinks" onclick="openCity(event, 'AtualizaAtivo')">Atualizar ativo</a></li>
+  <li><a href="#" class="tablinks" onclick="openCity(event, 'Acessos')">Acessos</a></li>
 </ul>
 <div id="Pesquisa" class="tabcontent">
  <?php include "tabela.php" ?>
@@ -67,6 +68,10 @@ ul.tab li a:focus, .active {background-color: #ccc;}
 <div id="AtualizaAtivo" class="tabcontent">
  <h3>Atualizar ativo</h3>
   <?php include "formAtualizaAtivos.html" ?>
+</div>
+<div id="Acessos" class="tabcontent">
+ <h3>Acessos ao sistema</h3>
+  <?php include "tabelaAcessos.php" ?>
 </div>
 
 
