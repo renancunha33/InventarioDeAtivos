@@ -13,17 +13,18 @@
 </head>
 <body>
 	<div class="container">
-		<?php
-		
-		error_reporting(0);
-		ini_set('display_errors', 0);
+		<?php		
+		//error_reporting(0);
+		//ini_set('display_errors', 0);
+		$tz = 'America/Sao_Paulo';
+		$timestamp = time();
+		$dt = new DateTime("now", new DateTimeZone($tz)); //first argument "must" be a string
+		$dt->setTimestamp($timestamp); //adjust the object to correct timestamp
 		include "control/conecta_mysql.inc";
 		$user=$_POST["nome"];
-		$pass=$_POST["senha"];
-		
+		$pass=$_POST["senha"];		
 		$res = mysqli_query($conexao,"select * from LOGIN WHERE cd_login ='$user'");		
-		$row = mysqli_fetch_array($res);
-		
+		$row = mysqli_fetch_array($res);		
 		$linha= mysqli_num_rows($res);
 		if($linha != 0){
 				if(base64_encode($pass) != $row['ds_senha']){
@@ -37,7 +38,7 @@
 				";
 			}else{
 				session_start();
-				
+				mysqli_query($conexao,"INSERT INTO acesso(cd_login_acesso,dt_acesso)VALUES('$user','".$dt->format('d.m.Y, H:i:s')."')");
 				$sql= "select LOGIN.*, DAODS.* from LOGIN inner join DAODS on '$user' = DAODS.cd_login";
 				$query = mysqli_query($conexao,$sql);
 				$DAODS = mysqli_fetch_array($query);
