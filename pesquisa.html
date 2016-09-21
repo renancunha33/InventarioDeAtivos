@@ -11,11 +11,13 @@ Pesquisar por:
 <div class="col-xs-6">
 <select class="form-control" name="txtsetor2">
   <option value="" selected disabled>Escolha uma opção</option>
+  <option>Código</option>
   <option>Identificação</option>
   <option>Data do cadastro</option>
   <option>Data de aquisição</option>
   <option>Código de nota fiscal</option>
   <option>Estado de conservação</option>
+  <option>Marca</option>
   <option>Categoria</option>
   <option>Unidade</option>
   <option>Setor</option>
@@ -32,6 +34,7 @@ Pesquisar por:
   <label><input type="checkbox" name="cbnotafiscal"value="cd_notafiscal">Código de nota fiscal</label>
   <label><input type="checkbox" name="cbvalor"value="ds_valor">Valor(R$)</label>
   <label><input type="checkbox" name="cbsituacao"value="ds_situacao">Estado de conservação</label>
+  <label><input type="checkbox" name="cbmarca"value="cd_marca">Marca</label>
   <label><input type="checkbox" name="cbcategoria"value="ds_categoria">Categoria</label>
   <label><input type="checkbox" name="cbunidade"value="ds_unidade">Unidade</label>
   <label><input type="checkbox" name="cbsetor"value="ds_setor">Setor</label>
@@ -70,6 +73,7 @@ Pesquisar por:
 	var cbnotafiscal = $("input[name=cbnotafiscal]").prop('checked');
 	var cbvalor = $("input[name=cbvalor]").prop('checked');
 	var cbsituacao = $("input[name=cbsituacao]").prop('checked');
+	var cbmarca = $("input[name=cbmarca]").prop('checked');
 	var cbcategoria = $("input[name=cbcategoria]").prop('checked');
 	var cbunidade = $("input[name=cbunidade]").prop('checked');
 	var cbsetor = $("input[name=cbsetor]").prop('checked');
@@ -83,6 +87,7 @@ Pesquisar por:
 	"cbnotafiscal" :cbnotafiscal,
 	"cbvalor": cbvalor,
 	"cbsituacao": cbsituacao,
+	"cbmarca": cbmarca,
 	"cbcategoria": cbcategoria,
 	"cbunidade":cbunidade,
 	"cbsetor": cbsetor
