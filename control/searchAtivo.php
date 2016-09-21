@@ -32,6 +32,13 @@ ini_set('display_errors', 0);
 		case "Setor":
 		$pesquisa = "ds_setor";
 		break;
+		case "Código":
+		$pesquisa = "cd_patrimonio";
+		break;
+		case "Marca":
+		$pesquisa = "cd_marca";
+		break;
+		
 	}	
 	
 	$reso = mysqli_query($conexao, "select * from ATIVO WHERE `$pesquisa` LIKE '%$string%'");
@@ -66,6 +73,11 @@ if($_POST['cbvalor']== 'true')
 if($_POST['cbsituacao']== 'true')
 {
     $eco=$eco."<th>Status</th>";
+    
+}
+if($_POST['cbmarca']== 'true')
+{
+    $eco=$eco."<th>Marca</th>";
     
 }
 if($_POST['cbcategoria']== 'true')
@@ -118,6 +130,11 @@ if($_POST['cbvalor']== 'true')
 if($_POST['cbsituacao']== 'true')
 {
     $eco=$eco."<td>".$row['ds_situacao']."</td>";
+    
+}
+if($_POST['cbmarca']== 'true')
+{
+    $eco=$eco."<td>".$row['cd_marca']."</td>";
     
 }
 if($_POST['cbcategoria']== 'true')
