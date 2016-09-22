@@ -1,0 +1,231 @@
+<html>
+<head>
+<meta charset="utf-8">
+<link href="./bootstrap/bootstrap.min.css" rel="stylesheet">
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<link href="./bootstrap/ie10-viewport-bug-workaround.css" rel="stylesheet">
+<!-- Custom styles for this template -->
+<link href="./bootstrap/signin.css" rel="stylesheet">
+</head>
+<body>
+<form method="post">
+<div class="form-group row">
+<div class="col-xs-6">
+<input type="number" class="form-control" name="txtStringUp" placeholder="Digite o Código do Ativo"value=""required="">
+</div>
+</div>
+<div class="form-group row">
+<div class="col-xs-6">
+<input type="button" id="pesquisarAtivo" name="pesquisarAtivoUp" value="Pesquisar Ativo" class="btn btn-lg btn btn-success btn-block">
+</div>
+</div>
+</form>
+<div id="boxUpdate" class="container" style="visibility: hidden;">
+<form action="POST" id="formAtivo">
+<div class="form-group row">
+<div class="col-xs-8">
+ <input type="number" id="txtpatrimonioUp" name="txtpatrimonioUp" class="form-control" placeholder="Código de patrimônio" disabled>
+</div>
+</div>
+<div class="form-group row">
+   <div class="col-xs-8">
+      <input class="form-control" type="text"placeholder="Identificação" name="txtidentificacaoUp"id="txtidentificacaoUp" disabled>
+  </div>
+</div>
+<div class="form-group row">
+  <div class="col-xs-2">
+    Data do cadastro
+  </div>
+  <div class="col-xs-6">
+    <input class="form-control" type="date" id="dtcadastroUp"name="dtcadastroUp" disabled>
+  </div>
+</div>
+<div class="form-group row">
+ <div class="col-xs-2">
+	Data de aquisição
+  </div>
+  <div class="col-xs-6">
+    <input class="form-control" type="date"id="dtaquisicaoUp" name="dtaquisicaoUp" disabled>
+  </div>
+</div>
+<div class="form-group row">
+  
+  <div class="col-xs-8">
+    <input class="form-control" type="number"  placeholder="Código de nota fiscal" id="txtnfUp" name="txtnfUp"disabled>
+  </div>
+</div>
+<div class="form-group row">
+  
+  <div class="col-xs-8">
+    <input class="form-control" type="number"  placeholder="Valor(R$)" id="txtvalorUp" name="txtvalorUp"disabled>
+  </div>
+</div>
+<div class="form-group row">
+  <div class="col-xs-2">
+  Estado de conservação
+  </div>
+  <div class="col-xs-6">
+	<select class="form-control" placeholder="Estado de conservação" id="txtstatusUp"name="txtstatusUp" disabled>
+  <option value="" selected disabled>Escolha uma opção</option>
+  <option>Novo</option>
+  <option>Seminovo</option>
+  <option>Usado</option>
+</select>
+  </div>
+</div>
+<div class="form-group row">
+   <div class="col-xs-2">
+  Categoria
+  </div>
+  <div class="col-xs-6">
+	<select class="form-control" placeholder="Categoria" id="txtcategoriaUp" name="txtcategoriaUp" disabled>
+	<option value="" selected disabled>Escolha uma opção</option>
+  <option>Notebook</option>
+  <option>Desktop</option>
+  <option>Swicth/AP/Roteador</option>
+  <option>Sevidor</option>
+  <option>Monitor</option>
+  <option>Rádio</option>
+  <option>Coletor</option>
+  <option>Outros</option>
+</select>
+  </div>
+  </div>
+<div class="form-group row">
+  
+  <div class="col-xs-8">
+    <input class="form-control" type="text"  placeholder="Marca" id="txtmarcaUp" name="txtmarcaUp"disabled>
+  </div>
+</div>
+<div class="form-group row">
+   <div class="col-xs-2">
+  Unidade
+  </div>
+  <div class="col-xs-6">
+	<select class="form-control" id="txtunidadeUp" name="txtunidadeUp"disabled>
+	<option value="" selected disabled>Escolha uma opção</option>
+  <option>Rondonópolis (MT)</option>  
+  <option>Cambé (PR)</option>  
+  <option>Colombo (PR)</option>
+  <option>Curitiba (PR)</option>
+  <option>Cubatão (SP)</option>
+  <option>Santos (SP)</option>
+  <option>Bauru (SP)</option>
+  <option>Esteio (RS)</option>
+  <option>Itajaí (SC)</option> 
+</select>
+</div>
+</div>
+<div class="form-group row">
+ <div class="col-xs-2">
+  Setor
+  </div>
+  <div class="col-xs-6">
+	<select class="form-control"id="txtsetorUp"name="txtsetorUp"disabled>
+	<option value="" selected disabled>Escolha uma opção</option>
+  <option>TI</option>
+  <option>PCM</option>
+  <option>SESMT</option>
+  <option>QA</option>
+  <option>SIF</option>
+  <option>TERMINAL</option>
+  <option>GERENCIA</option>
+  <option>OPERAÇÃO</option>
+  <option>RECEPÇÃO</option>
+  <option>RH/DP</option>
+  <option>MANUTENÇÃO</option>
+  <option>TERMINAL SECO</option>
+  <option>BALANÇA</option>
+  <option>ESTOQUE</option>
+  <option>FINANCEIRO</option>
+  <option>INTERMODAL</option>
+  <option>GATE</option>
+  <option>OUTRO</option>
+  </select>
+</div>
+
+</div>
+<div class="form-group row">
+  
+   <div class="col-xs-2">
+  Setor Anterior
+  </div>
+  <div class="col-xs-6">
+	<select class="form-control"id="txtsetoranteriorUp"name="txtsetoranteriorUp"disabled>
+	<option value="" selected disabled>Escolha uma opção</option>
+  <option>TI</option>
+  <option>PCM</option>
+  <option>SESMT</option>
+  <option>QA</option>
+  <option>SIF</option>
+  <option>TERMINAL</option>
+  <option>GERENCIA</option>
+  <option>OPERAÇÃO</option>
+  <option>RECEPÇÃO</option>
+  <option>RH/DP</option>
+  <option>MANUTENÇÃO</option>
+  <option>TERMINAL SECO</option>
+  <option>BALANÇA</option>
+  <option>ESTOQUE</option>
+  <option>FINANCEIRO</option>
+  <option>INTERMODAL</option>
+  <option>GATE</option>
+  <option>OUTRO</option>
+  </select>
+</div>
+</div>
+<div class="form-group row">
+   <div class="col-xs-8">
+    <textarea class="form-control" rows="2"  placeholder="Observações" id="txtobsUp"name="txtobsUp"disabled></textarea>
+  </div>
+</div>
+</form>
+</div>
+<br><br>
+</body>
+<script type="text/javascript"src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript"src="bootstrap/jquery.mask.js"></script>
+<script type="text/javascript">
+	$("input[name=pesquisarAtivoUp]").click(function(){
+
+	var txtString = $("input[name=txtStringUp]").val();	
+	info = {
+	"txtStringUp":txtString,
+	};
+	
+	$.ajax({
+	type:"POST",
+	url:"control/searchAtivoUp.php",
+	data: info,
+	success: function (res) {
+	
+	response = JSON.parse(res);
+	
+	if(response[0]==""){
+	alert("Código não encontrado");
+	}else{
+	document.getElementById("txtpatrimonioUp").value = response[0];
+	document.getElementById("txtidentificacaoUp").value = response[1];
+	document.getElementById("dtcadastroUp").value = response[2];
+	document.getElementById("dtaquisicaoUp").value = response[3];
+	document.getElementById("txtnfUp").value = response[4];
+	document.getElementById("txtvalorUp").value = response[5];
+	document.getElementById("txtstatusUp").value = response[6];
+	document.getElementById("txtcategoriaUp").value = response[7];
+	document.getElementById("txtmarcaUp").value = response[8];
+	document.getElementById("txtunidadeUp").value = response[9];
+	document.getElementById("txtsetorUp").value = response[10];
+	document.getElementById("txtsetoranteriorUp").value = response[11];
+	document.getElementById("txtobsUp").value = response[12];	
+	
+	document.getElementById("boxUpdate").style.visibility = "visible";
+	}
+    }
+	});
+	
+	return false;
+});
+</script>
+</html>
+
+

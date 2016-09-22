@@ -39,12 +39,17 @@ ul.tab li a:focus, .active {background-color: #ccc;}
 </style>
 <ul class="tab">
   <li><a href="#" class="tablinks" onclick="openCity(event, 'PesquisaAtivo')">Pesquisa</a></li>
+  <li><a href="#" class="tablinks" onclick="openCity(event, 'verAtivo')">Detalhes do ativo</a></li>
   
 </ul>
 
  <div id="PesquisaAtivo" class="tabcontent">
  <h3>Pesquisar ativos</h3>
   <?php include "pesquisa.html" ?>
+  </div>
+ <div id="verAtivo" class="tabcontent">
+ <h3>Detalhes do ativo</h3>
+  <?php include "verAtivo.html" ?>
   </div>
 
 
