@@ -2,7 +2,7 @@
 <?php
 	include 'conecta_mysql.inc';
 
-	$reso = mysqli_query($conexao, "select * from ATIVO");
+	$reso = mysqli_query($conexao, "select * from ATIVO ORDER BY `cd_patrimonio` ASC");
 	$eco = "<table class='table table-condensed table-striped'>";
 	$eco = $eco.'<thead><tr>';
 	$eco=$eco."<th>Patrimônio</th>";
