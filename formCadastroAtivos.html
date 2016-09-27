@@ -54,9 +54,7 @@
   <div class="col-xs-6">
 	<select class="form-control" placeholder="Estado de conservação" id="txtstatus"name="txtstatus" required>
   <option value="" selected disabled>Escolha uma opção</option>
-  <option>Novo</option>
-  <option>Seminovo</option>
-  <option>Usado</option>
+  <?php include "options/optionEstado.html"; ?>
 </select>
   </div>
 </div>
@@ -67,14 +65,7 @@
   <div class="col-xs-6">
 	<select class="form-control" placeholder="Categoria" id="txtcategoria" name="txtcategoria" required>
 	<option value="" selected disabled>Escolha uma opção</option>
-  <option>Notebook</option>
-  <option>Desktop</option>
-  <option>Swicth/AP/Roteador</option>
-  <option>Sevidor</option>
-  <option>Monitor</option>
-  <option>Rádio</option>
-  <option>Coletor</option>
-  <option>Outros</option>
+  <?php include "options/optionCategoria.html"; ?>
 </select>
   </div>
   </div>
@@ -91,15 +82,7 @@
   <div class="col-xs-6">
 	<select class="form-control" id="txtunidade" name="txtunidade"required>
 	<option value="" selected disabled>Escolha uma opção</option>
-  <option>Rondonópolis (MT)</option>  
-  <option>Cambé (PR)</option>  
-  <option>Colombo (PR)</option>
-  <option>Curitiba (PR)</option>
-  <option>Cubatão (SP)</option>
-  <option>Santos (SP)</option>
-  <option>Bauru (SP)</option>
-  <option>Esteio (RS)</option>
-  <option>Itajaí (SC)</option>
+  <?php include "options/optionUnidade.html"; ?>
 </select>
 </div>
 </div>
@@ -110,24 +93,7 @@
   <div class="col-xs-6">
 	<select class="form-control"id="txtsetor"name="txtsetor"required>
 	<option value="" selected disabled>Escolha uma opção</option>
-  <option>TI</option>
-  <option>PCM</option>
-  <option>SESMT</option>
-  <option>QA</option>
-  <option>SIF</option>
-  <option>TERMINAL</option>
-  <option>GERENCIA</option>
-  <option>OPERAÇÃO</option>
-  <option>RECEPÇÃO</option>
-  <option>RH/DP</option>
-  <option>MANUTENÇÃO</option>
-  <option>TERMINAL SECO</option>
-  <option>BALANÇA</option>
-  <option>ESTOQUE</option>
-  <option>FINANCEIRO</option>
-  <option>INTERMODAL</option>
-  <option>GATE</option>
-  <option>OUTRO</option>
+ <?php include "options/optionSetor.html"; ?>
   </select>
 </div>
 
@@ -140,24 +106,7 @@
   <div class="col-xs-6">
 	<select class="form-control"id="txtsetoranterior"name="txtsetoranterior">
 	<option value="" selected disabled>Escolha uma opção</option>
-  <option>TI</option>
-  <option>PCM</option>
-  <option>SESMT</option>
-  <option>QA</option>
-  <option>SIF</option>
-  <option>TERMINAL</option>
-  <option>GERENCIA</option>
-  <option>OPERAÇÃO</option>
-  <option>RECEPÇÃO</option>
-  <option>RH/DP</option>
-  <option>MANUTENÇÃO</option>
-  <option>TERMINAL SECO</option>
-  <option>BALANÇA</option>
-  <option>ESTOQUE</option>
-  <option>FINANCEIRO</option>
-  <option>INTERMODAL</option>
-  <option>GATE</option>
-  <option>OUTRO</option>
+  <?php include "options/optionSetor.html"; ?>
   </select>
 </div>
 </div>

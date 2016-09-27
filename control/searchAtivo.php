@@ -41,7 +41,7 @@ ini_set('display_errors', 0);
 		
 	}	
 	
-	$reso = mysqli_query($conexao, "select * from ATIVO WHERE `$pesquisa` LIKE '%$string% ORDER BY `cd_patrimonio` ASC'");
+	$reso = mysqli_query($conexao, "select * from ATIVO WHERE `$pesquisa` LIKE '%$string%' ORDER BY `cd_patrimonio` ASC");
 	$eco = "<table class='table table-condensed table-striped'>";
 	$eco = $eco.'<thead><tr>';
 	$eco=$eco."<th>Patrimônio</th>";

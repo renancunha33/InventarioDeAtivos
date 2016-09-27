@@ -1,0 +1,134 @@
+<html>
+<body>
+<form method="post">
+<div class="form-group row">
+<div class="col-xs-6">
+<input type="text" class="form-control" name="txt" placeholder="Texto a ser pesquisado"value=""required="">
+</div>
+</div>
+Pesquisar por:
+<div class="form-group row">
+<div class="col-xs-6">
+<select class="form-control" name="txtsetor2">
+  <option value="" selected disabled>Escolha uma opção</option>
+  <option>Código</option>
+  <option>Identificação</option>
+  <option>Data do cadastro</option>
+  <option>Data de aquisição</option>
+  <option>Código de nota fiscal</option>
+  <option>Estado de conservação</option>
+  <option>Marca</option>
+  <option>Categoria</option>
+  <option>Unidade</option>
+  <option>Setor</option>
+</select>
+</div>
+</div>
+<div class="form-group row">
+<div class="col-xs-12">
+	Campo a serem buscados
+  <div class="checkbox">
+  <label><input type="checkbox" name="cbidentificacao"value="ds_identificacao">Identificação</label>
+  <label><input type="checkbox" name="cbcadastro"value="dt_cadastro">Data do cadastro</label>
+  <label><input type="checkbox" name="cbaquisicao"value="dt_aquisicao">Data de aquisição</label>
+  <label><input type="checkbox" name="cbnotafiscal"value="cd_notafiscal">Código de nota fiscal</label>
+  <label><input type="checkbox" name="cbvalor"value="ds_valor">Valor(R$)</label>
+  <label><input type="checkbox" name="cbsituacao"value="ds_situacao">Estado de conservação</label>
+  <label><input type="checkbox" name="cbmarca"value="cd_marca">Marca</label>
+  <label><input type="checkbox" name="cbcategoria"value="ds_categoria">Categoria</label>
+  <label><input type="checkbox" name="cbunidade"value="ds_unidade">Unidade</label>
+  <label><input type="checkbox" name="cbsetor"value="ds_setor">Setor</label>
+</div>
+</div>
+</div>
+<div class="form-group row">
+<div class="col-xs-6">
+<input type="button" id="pesquisarAtivo" name="pesquisarAtivo" value="Pesquisar Ativo" class="btn btn-lg btn btn-success btn-block">
+</div>
+<div class="col-xs-6">
+<input type="button" id="pesquisarAtivoTudo" name="pesquisarAtivoTudo" value="Exibir TODOS os ativos" class="btn btn-lg btn btn-info btn-block">
+</div>
+</div>
+</form>
+<div class="form-group row">
+<div class="col-xs-8">
+<button id="relat"class="btn btn-info btn-sm" style="float:left;" onclick="printContent('tabelaAtivos')" disabled>Gerar relatório (BETA)</button>
+</div>
+</div>
+<div class="form-group row">
+<div class="col-xs-8">
+<div class="container" style="overflow-x: auto;" id="tabelaAtivos">
+</div>
+</div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$("input[name=pesquisarAtivo]").click(function(){
+
+	var txt = $("input[name=txt]").val();
+	var txtsetor =  $("select[name=txtsetor2]").val();
+	var cbidentificacao = $("input[name=cbidentificacao]").prop('checked');
+	var cbcadastro = $("input[name=cbcadastro]").prop('checked');
+	var cbaquisicao = $("input[name=cbaquisicao]").prop('checked');
+	var cbnotafiscal = $("input[name=cbnotafiscal]").prop('checked');
+	var cbvalor = $("input[name=cbvalor]").prop('checked');
+	var cbsituacao = $("input[name=cbsituacao]").prop('checked');
+	var cbmarca = $("input[name=cbmarca]").prop('checked');
+	var cbcategoria = $("input[name=cbcategoria]").prop('checked');
+	var cbunidade = $("input[name=cbunidade]").prop('checked');
+	var cbsetor = $("input[name=cbsetor]").prop('checked');
+	//alert(txt + " " + txtsetor);
+	info = {
+	"txt":txt,
+	"txtsetor":txtsetor,
+	"cbidentificacao": cbidentificacao,
+	"cbcadastro": cbcadastro,
+	"cbaquisicao": cbaquisicao,
+	"cbnotafiscal" :cbnotafiscal,
+	"cbvalor": cbvalor,
+	"cbsituacao": cbsituacao,
+	"cbmarca": cbmarca,
+	"cbcategoria": cbcategoria,
+	"cbunidade":cbunidade,
+	"cbsetor": cbsetor
+	};
+	
+	$.ajax({
+	type:"POST",
+	url:"control/searchAtivo.php",
+	data: info,
+	success: function (response) {
+                   document.getElementById("relat").disabled = false;
+				   document.getElementById("tabelaAtivos").innerHTML = response;
+            }
+	});
+	return false;
+});
+</script>
+<script type="text/javascript">
+function printContent(el){
+	var restorepage = document.body.innerHTML;
+	var printcontent = document.getElementById(el).innerHTML;
+	document.body.innerHTML =  "<h1>Relatório de Ativos<h1>"+printcontent;
+	window.print();
+	document.body.innerHTML = restorepage;
+	document.getElementById("relat").disabled = true;
+	location.reload();
+}
+</script>
+<script type="text/javascript">
+$("input[name=pesquisarAtivoTudo]").click(function(){
+
+	$.ajax({
+	type:"POST",
+	url:"control/searchTodosAtivos.php",
+	success: function (response) {
+                   document.getElementById("relat").disabled = false;
+				   document.getElementById("tabelaAtivos").innerHTML = response;
+            }
+	});
+	return false;
+});
+</script>
+</body>
+</html>

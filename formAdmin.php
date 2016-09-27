@@ -59,7 +59,7 @@ ul.tab li a:focus, .active {background-color: #ccc;}
  </div>
  <div id="PesquisaAtivo" class="tabcontent">
  <h3>Pesquisar ativos</h3>
-  <?php include "pesquisa.html" ?>
+  <?php include "pesquisaAtivos.html" ?>
  </div>
 <div id="DeletaAtivo" class="tabcontent">
  <h3>Deletar ativos</h3>
