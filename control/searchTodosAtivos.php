@@ -68,6 +68,6 @@
 	}
 	$eco = $eco."</table>";
 	
-	echo $eco;
+	echo "<br><h3> Total de ativos: ". mysqli_num_rows($reso)."</h3>".$eco;
 	
   ?>
