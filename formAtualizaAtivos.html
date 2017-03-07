@@ -21,6 +21,11 @@
 </div>
 </form>
 <div id="boxUpdate" class="container" style="visibility: hidden;">
+<div class="form-group row">
+ <div class="col-xs-8">
+<button type="button" id="RelatorioAtivo" name="RelatorioAtivo" onclick="printContent('formAtivo')"" class="btn btn-lg btn-info btn-block">Imprimir dados</button>
+</div>
+</div>
 <form action="POST" id="formAtivo">
 <div class="form-group row">
 <div class="col-xs-8">
@@ -215,6 +220,29 @@ $(document).ready(function(){
 
 	});	
 });
+</script>
+<script type="text/javascript">
+function printContent(el){
+	var restorepage = document.body.innerHTML;
+	//var printcontent = document.getElementById(el).innerHTML;
+	document.body.innerHTML = "<h1>Ativo nº"+document.getElementById("txtpatrimonioUp").value+"</h1>"+	
+	"Identificação :"+document.getElementById("txtidentificacaoUp").value+"<br/>"+ 
+	"Data de cadastro :"+document.getElementById("dtcadastroUp").value+"<br/>"+ 
+	"Data de aquisição :"+document.getElementById("dtaquisicaoUp").value+"<br/>"+ 
+	"DANFE :"+document.getElementById("txtnfUp").value+"<br/>"+ 
+	"Valor da nota :"+document.getElementById("txtvalorUp").value+"<br/>"+ 
+	"estado de conservação :"+document.getElementById("txtstatusUp").value+"<br/>"+ 
+	"Categoria :"+document.getElementById("txtcategoriaUp").value+"<br/>"+ 
+	"Marca :"+document.getElementById("txtmarcaUp").value+"<br/>"+ 
+	"Unidade :"+document.getElementById("txtunidadeUp").value+"<br/>"+ 
+	"Setor :"+document.getElementById("txtsetorUp").value+"<br/>"+ 
+	"Setor Anterior :"+document.getElementById("txtsetoranteriorUp").value+"<br/>"+ 
+	"Observações :"+document.getElementById("txtobsUp").value+"<br/>";
+	window.print();
+	document.body.innerHTML = restorepage;
+	document.getElementById("relat").disabled = true;
+	location.reload();
+}
 </script>
 </html>
 

@@ -97,6 +97,12 @@
 		}
 		?>
 	</div>
+	<footer class="footer" style="position: fixed; bottom: 0px;background-color: black;width: 100%;">
+				<div class="container">
+					<!--p class="pull-right"><a href="index.html"><font id="cor"><b>Volte ao topo</b></font></a></p-->
+					<p>Feito por <a href="http://renancunha33.com.br" target='_blank'><font color='grey'>Renan Cunha/2016</font></a></p>
+				</div>
+			</footer>
 </body>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript">

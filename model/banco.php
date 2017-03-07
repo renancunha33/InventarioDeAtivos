@@ -42,7 +42,7 @@ mysqli_query($conexao, 'CREATE TABLE `acesso` (
   `cd_acesso` int(11) NOT NULL,
   `cd_login_acesso` varchar(30) NOT NULL,
   `dt_acesso` varchar(60) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;') or die (mysql_error());
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;');
 
 mysqli_query($conexao, 'ALTER TABLE `acesso`
   ADD PRIMARY KEY (`cd_acesso`);
@@ -57,7 +57,7 @@ ALTER TABLE `login`
   ADD PRIMARY KEY (`cd_login`);
 
 ALTER TABLE `acesso`
-  MODIFY `cd_acesso` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;') or die (mysql_error());
+  MODIFY `cd_acesso` int(11) NOT NULL AUTO_INCREMENT;');
 
 
  echo "<script>javascript:alert('Banco criado!')</script>";

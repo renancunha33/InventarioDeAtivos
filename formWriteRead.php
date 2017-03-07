@@ -41,7 +41,7 @@ ul.tab li a:focus, .active {background-color: #ccc;}
 <li><a href="#" class="tablinks" onclick="openCity(event, 'Cadastros')">Cadastro de Ativo</a></li>
   <li><a href="#" class="tablinks" onclick="openCity(event, 'PesquisaAtivo')">Pesquisa</a></li>
   <li><a href="#" class="tablinks" onclick="openCity(event, 'DeletaAtivo')">Deletar ativo</a></li>
-  <li><a href="#" class="tablinks" onclick="openCity(event, 'AtualizaAtivo')">Atualizar ativo</a></li>  
+  <li><a href="#" class="tablinks" onclick="openCity(event, 'AtualizaAtivo')">Atualizar ativo/relatório</a></li>  
  </ul>
 <div id="Cadastros" class="tabcontent">
   <h3>Cadastro de Ativos</h3>
